@@ -22,8 +22,15 @@ namespace MyProject.Services
 
         public List<Shoes> GetAll() => Shoeses;
 
-        public Shoes Get(int id) => Shoeses.FirstOrDefault(p => p.Id == id);
-
+        public Shoes Get(int id)
+        {
+            var shoes = Shoeses.FirstOrDefault(p => p.Id == id);
+            if (shoes is null)
+            {
+                throw new KeyNotFoundException($"Shoe with id {id} not found.");
+            }
+            return shoes;
+        }
         public void Add(Shoes shoes)
         {
             shoes.Id = nextId++;
@@ -35,7 +42,6 @@ namespace MyProject.Services
             var shoes = Get(id);
             if (shoes is null)
                 return;
-
             Shoeses.Remove(shoes);
         }
 

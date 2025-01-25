@@ -1,0 +1,23 @@
+# .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.sln.ide
+*.sln.docstates
+
+# Visual Studio
+.vscode/
+*.csproj.user
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+
+# Rider
+.idea/
+
+# ASP.NET
+wwwroot/lib/
+wwwroot/css/
+wwwroot/js/
